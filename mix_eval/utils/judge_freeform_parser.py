@@ -24,6 +24,7 @@ class ChatGPTJudgeCloseendFreeform:
         load_dotenv()
         self.client = OpenAI(
             api_key=os.getenv('MODEL_PARSER_API'),
+            base_url=os.getenv('MODEL_PARSER_BASE_URL'),
             timeout=Timeout(timeout=60.0, connect=5.0)
         )
 
