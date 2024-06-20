@@ -38,7 +38,7 @@ class ChatGPTJudgeCloseendMultichoice:
     
     def _GPT_decode(self, inputs):
         completion = self.client.chat.completions.create(
-                            model=self.JUDGE,
+                            model=os.getenv('MODEL_PARSER_NAME'),
                             response_format={ "type": 'text'},
                             max_tokens=self.MAX_NEW_TOKENS,
                             messages=self.format_prompts(inputs),
